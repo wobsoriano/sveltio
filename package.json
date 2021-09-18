@@ -1,0 +1,49 @@
+{
+  "name": "svaltio",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "module",
+  "keywords": [
+    "svelte",
+    "store",
+    "valtio"
+  ],
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "main": "./dist/svaltio.umd.js",
+  "module": "./dist/svaltio.es.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/svaltio.es.js",
+      "require": "./dist/svaltio.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:demo": "vite build --mode demo",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "@tsconfig/svelte": "^2.0.1",
+    "svelte": "^3.37.0",
+    "svelte-check": "^2.1.0",
+    "svelte-preprocess": "^4.7.2",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.5.4",
+    "valtio": "^1.2.3"
+  },
+  "peerDependencies": {
+    "valtio": "^1.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/svaltio.git"
+  },
+  "homepage": "https://github.com/wobsoriano/svaltio#readme"
+}
