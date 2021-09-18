@@ -23,8 +23,8 @@ const prodConfig = defineConfig({
       external: ["valtio/vanilla", "valtio/utils"],
       output: {
         globals: {
-          vanilla: 'valtio/vanilla',
-          utils: 'valtio/utils'
+          'valtio/vanilla': 'vanilla',
+          'valtio/utils': 'utils'
         },
       },
     },
