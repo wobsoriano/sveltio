@@ -1,44 +1,32 @@
-# svelte-xactor
+# svaltio
 
-This middleware allows you to easily convert your [xactor](https://github.com/statelyai/xactor) machines into a global store that implements store contract.
+Create global proxy-state with [valtio](https://github.com/pmndrs/valtio).
 
 ## Installation
 
 ```sh
-yarn add svelte-xactor xactor
+yarn add svaltio valtio
 ```
 
 ## Usage
 
 ```ts
 // store.ts
-import { createSystem, createBehavior } from 'xactor'
+import { proxy } from 'valtio/vanilla'
 
-const counter = createBehavior(
-  (state, message, context) => {
-    if (message.type === 'add') {
-      return {
-        ...state,
-        count: state.count + message.value,
-      }
-    }
-
-    return state
-  },
-  { count: 0 }
-)
-
-export const counterSystem = createSystem(counter, 'counter')
+export const state = proxy({ count: 0 })
 ```
+
+Read from snapshots, mutate the source.
 
 ```svelte
 <script lang="ts">
-  import toSvelteStore from 'svelte-xactor'
-  import { counterSystem } from './store'
-  const state = toSvelteStore(counterSystem)
+  import useSnapshot from 'svaltio'
+  import { state  } from '../store'
+  const snap = useSnapshot(state)
 </script>
 
-<button on:click={() => counterSystem.send({type: 'add', value: 1})}>
-  Clicks: {$state.count}
+<button on:click={() => state.count++}>
+  Clicks: {$snap.count}
 </button>
 ```

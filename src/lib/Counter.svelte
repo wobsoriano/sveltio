@@ -1,7 +1,7 @@
 <script lang="ts">
-  import toSvelteStore from '../../lib'
+  import useSnapshot from '../../lib'
   import { state  } from '../store'
-  const snap = toSvelteStore(state)
+  const snap = useSnapshot(state)
 </script>
 
 <button on:click={() => state.count++}>
