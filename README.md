@@ -22,7 +22,7 @@ Read from snapshots, mutate the source.
 ```svelte
 <script lang="ts">
   import useSnapshot from 'svaltio'
-  import { state  } from '../store'
+  import { state } from './store'
   const snap = useSnapshot(state)
 </script>
 

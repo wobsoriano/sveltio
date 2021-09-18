@@ -1,7 +1,7 @@
 import { subscribe, snapshot } from 'valtio/vanilla'
 import type { DeepResolveType } from 'valtio/vanilla'
 
-function toSvelteStore<T extends object>(proxyObject: T) {
+function useStore<T extends object>(proxyObject: T) {
     return {
         subscribe(fn: (payload: DeepResolveType<T>) => void) {
             fn(snapshot(proxyObject))
@@ -12,4 +12,4 @@ function toSvelteStore<T extends object>(proxyObject: T) {
     }
 }
 
-export default toSvelteStore
+export default useStore

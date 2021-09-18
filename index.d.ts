@@ -1,5 +1,6 @@
-import type { ActorSystem } from 'xactor';
-declare function toSvelteStore<T extends object>(system: ActorSystem<unknown, T>): {
-    subscribe(fn: (payload: T) => void): () => void;
+import type { DeepResolveType } from 'valtio/vanilla';
+
+declare function useStore<T extends object>(proxyObject: T): {
+    subscribe(fn: (payload: DeepResolveType<T>) => void): () => void;
 }
-export default toSvelteStore;
+export default useStore;

@@ -16,14 +16,14 @@ const prodConfig = defineConfig({
   build: {
     lib: {
       entry: resolvePath("lib/index.ts"),
-      name: 'svelte-xactor',
-      fileName: (format) => `svelte-xactor.${format}.js`,
+      name: 'svaltio',
+      fileName: (format) => `svaltio.${format}.js`,
     },
     rollupOptions: {
-      external: ["xactor"],
+      external: ["valtio"],
       output: {
         globals: {
-          xactor: 'xactor'
+          valtio: 'valtio'
         },
       },
     },
