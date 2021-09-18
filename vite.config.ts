@@ -16,8 +16,8 @@ const prodConfig = defineConfig({
   build: {
     lib: {
       entry: resolvePath("lib/index.ts"),
-      name: 'svaltio',
-      fileName: (format) => `svaltio.${format}.js`,
+      name: 'sveltio',
+      fileName: (format) => `sveltio.${format}.js`,
     },
     rollupOptions: {
       external: ["valtio/vanilla", "valtio/utils"],

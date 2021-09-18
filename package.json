@@ -1,7 +1,7 @@
 {
-  "name": "svaltio",
+  "name": "sveltio",
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "type": "module",
   "keywords": [
     "svelte",
@@ -12,13 +12,13 @@
     "dist",
     "index.d.ts"
   ],
-  "main": "./dist/svaltio.umd.js",
-  "module": "./dist/svaltio.es.js",
+  "main": "./dist/sveltio.umd.js",
+  "module": "./dist/sveltio.es.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/svaltio.es.js",
-      "require": "./dist/svaltio.umd.js"
+      "import": "./dist/sveltio.es.js",
+      "require": "./dist/sveltio.umd.js"
     }
   },
   "scripts": {
@@ -43,8 +43,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/svaltio.git"
+    "url": "git+https://github.com/wobsoriano/sveltio.git"
   },
-  "homepage": "https://github.com/wobsoriano/svaltio#readme",
+  "homepage": "https://github.com/wobsoriano/sveltio#readme",
   "sideEffects": false
 }

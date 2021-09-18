@@ -1,18 +1,18 @@
-# svaltio
+# sveltio
 
 Proxy-state with [valtio](https://github.com/pmndrs/valtio).
 
 ## Installation
 
 ```sh
-yarn add svaltio valtio
+yarn add sveltio valtio
 ```
 
 ## Usage
 
 ```ts
 // store.ts
-import { proxy } from 'svaltio'
+import { proxy } from 'sveltio'
 
 export const state = proxy({ count: 0 })
 ```
@@ -21,7 +21,7 @@ Read from snapshots, mutate the source.
 
 ```svelte
 <script lang="ts">
-  import { useSnapshot } from 'svaltio'
+  import { useSnapshot } from 'sveltio'
   import { state } from './store'
   const snap = useSnapshot(state)
 </script>
@@ -36,7 +36,7 @@ Read from snapshots, mutate the source.
 You can have computed values with dependency tracking with property access.
 
 ```ts
-import { proxyWithComputed } from 'svaltio'
+import { proxyWithComputed } from 'sveltio'
 
 export const state = proxyWithComputed({
   count: 1,
@@ -50,7 +50,7 @@ export const state = proxyWithComputed({
 Function to create a proxy with snapshot history.
 
 ```ts
-import { proxyWithHistory } from 'svaltio'
+import { proxyWithHistory } from 'sveltio'
 
 const state = proxyWithHistory({ count: 0 })
 console.log(state.value) // ---> { count: 0 }
