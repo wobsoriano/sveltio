@@ -1,6 +1,6 @@
 # svaltio
 
-Create global proxy-state with [valtio](https://github.com/pmndrs/valtio).
+Proxy-state with [valtio](https://github.com/pmndrs/valtio).
 
 ## Installation
 
