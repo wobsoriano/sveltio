@@ -1,3 +1,3 @@
-import { proxy } from 'valtio/vanilla'
+import { proxy } from '../lib'
 
 export const state = proxy({ count: 0 })

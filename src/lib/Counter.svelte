@@ -1,5 +1,5 @@
 <script lang="ts">
-  import useSnapshot from '../../lib'
+  import { useSnapshot } from '../../lib'
   import { state  } from '../store'
   const snap = useSnapshot(state)
 </script>

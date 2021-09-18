@@ -20,10 +20,11 @@ const prodConfig = defineConfig({
       fileName: (format) => `svaltio.${format}.js`,
     },
     rollupOptions: {
-      external: ["valtio"],
+      external: ["valtio/vanilla", "valtio/utils"],
       output: {
         globals: {
-          valtio: 'valtio'
+          vanilla: 'valtio/vanilla',
+          utils: 'valtio/utils'
         },
       },
     },

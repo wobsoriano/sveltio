@@ -45,5 +45,6 @@
     "type": "git",
     "url": "git+https://github.com/wobsoriano/svaltio.git"
   },
-  "homepage": "https://github.com/wobsoriano/svaltio#readme"
+  "homepage": "https://github.com/wobsoriano/svaltio#readme",
+  "sideEffects": false
 }
