@@ -42,7 +42,7 @@
     "vite": "^2.5.4"
   },
   "peerDependencies": {
-    "valtio": "^1.2.3"
+    "valtio": "^1.4.0"
   },
   "repository": {
     "type": "git",
