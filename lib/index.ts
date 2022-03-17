@@ -1,22 +1,14 @@
-import { subscribe, snapshot, proxy } from 'valtio/vanilla'
-import type { DeepResolveType } from 'valtio/vanilla'
+import { subscribe, snapshot, proxy } from "valtio/vanilla";
 
 function useSnapshot<T extends object>(proxyObject: T) {
-    return {
-        subscribe(fn: (payload: DeepResolveType<T>) => void) {
-            fn(snapshot(proxyObject))
-            return subscribe(proxyObject, () => {
-                fn(snapshot(proxyObject));
-            })
-        }
-    }
+  return {
+    subscribe(fn: (payload: T) => void) {
+      fn(snapshot(proxyObject) as T);
+      return subscribe(proxyObject, () => {
+        fn(snapshot(proxyObject) as T);
+      });
+    },
+  };
 }
 
-export {
-    useSnapshot,
-    proxy
-}
-export {
-    proxyWithComputed,
-    proxyWithHistory
-} from 'valtio/utils'
+export { useSnapshot, proxy };
