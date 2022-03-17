@@ -26,6 +26,7 @@
     "build": "vite build",
     "build:demo": "vite build --mode demo",
     "check": "svelte-check --tsconfig ./tsconfig.json",
+    "prepublishOnly": "pnpm run build",
     "release": "bumpp --commit --push --tag && pnpm publish"
   },
   "devDependencies": {
