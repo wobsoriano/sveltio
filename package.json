@@ -25,11 +25,13 @@
     "dev": "vite",
     "build": "vite build",
     "build:demo": "vite build --mode demo",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "release": "bumpp --commit --push --tag && pnpm publish"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
     "@tsconfig/svelte": "^2.0.1",
+    "bumpp": "^7.1.1",
     "svelte": "^3.37.0",
     "svelte-check": "^2.1.0",
     "svelte-preprocess": "^4.7.2",
