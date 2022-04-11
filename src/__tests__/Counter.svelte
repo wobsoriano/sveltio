@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useSnapshot } from '..'
+  import { useSnapshot } from '../index'
   import { state  } from './store'
   const snap = useSnapshot(state)
 </script>
