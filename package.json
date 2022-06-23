@@ -22,7 +22,7 @@
     "build": "pnpm run build-fast -- --dts-resolve --minify",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "release": "bumpp --commit --push --tag && pnpm publish",
+    "release": "bumpp --commit --push --tag && npm publish",
     "prepublishOnly": "pnpm run build",
     "lint": "eslint --ext=js,ts .",
     "lint:fix": "eslint --ext=js,ts . --fix"
