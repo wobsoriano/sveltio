@@ -27,8 +27,8 @@
     "lint": "eslint --ext=js,ts .",
     "lint:fix": "eslint --ext=js,ts . --fix"
   },
-  "peerDependencies": {
-    "valtio": "^1.4.0"
+  "dependencies": {
+    "valtio": "^1.6.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
@@ -42,7 +42,6 @@
     "svelte": "^3.46.4",
     "tsup": "^5.12.1",
     "typescript": "^4.3.5",
-    "valtio": "^1.5.2",
     "vitest": "^0.9.3"
   },
   "lint-staged": {
