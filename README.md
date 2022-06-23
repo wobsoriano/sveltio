@@ -5,7 +5,7 @@ Proxy-state with [valtio](https://github.com/pmndrs/valtio).
 ## Installation
 
 ```sh
-pnpm add sveltio valtio
+pnpm add sveltio
 ```
 
 ## Usage
