@@ -33,8 +33,8 @@
     "test:watch": "vitest watch",
     "release": "bumpp --commit --push --tag && npm publish",
     "prepublishOnly": "pnpm run build",
-    "lint": "eslint --ext=js,ts .",
-    "lint:fix": "eslint --ext=js,ts . --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "valtio": "^1.6.1"
