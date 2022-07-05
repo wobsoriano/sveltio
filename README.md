@@ -38,7 +38,7 @@ Read from snapshots, mutate the source.
 You can have computed values with dependency tracking with property access.
 
 ```ts
-import { proxyWithComputed } from 'valtio/utils'
+import { proxyWithComputed } from 'sveltio/utils'
 
 export const state = proxyWithComputed(
   {
@@ -55,7 +55,7 @@ export const state = proxyWithComputed(
 Function to create a proxy with snapshot history.
 
 ```ts
-import { proxyWithHistory } from 'valtio/utils'
+import { proxyWithHistory } from 'sveltio/utils'
 
 const state = proxyWithHistory({ count: 0 })
 console.log(state.value) // ---> { count: 0 }
