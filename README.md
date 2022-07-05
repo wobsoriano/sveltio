@@ -79,6 +79,33 @@ const state = proxyWithComputed(
     doubled: memoize(snap => snap.count * 2),
   },
 )
+
+// Computed values accept custom setters too:
+const state2 = proxyWithComputed(
+  {
+    firstName: 'Alec',
+    lastName: 'Baldwin',
+  },
+  {
+    fullName: {
+      get: memoize(snap => `${snap.firstName} ${snap.lastName}`),
+      set: (state, newValue) => {
+        [state.firstName, state.lastName] = newValue.split(' ')
+      },
+    },
+  },
+)
+
+// if you want a computed value to derive from another computed, you must declare the dependency first:
+const state = proxyWithComputed(
+  {
+    count: 1,
+  },
+  {
+    doubled: memoize(snap => snap.count * 2),
+    quadrupled: memoize(snap => snap.doubled * 2),
+  },
+)
 ```
 
 ### `proxyWithHistory`
