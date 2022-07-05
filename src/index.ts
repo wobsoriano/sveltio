@@ -11,4 +11,8 @@ function useSnapshot<T extends Record<string | number | symbol, unknown>>(proxyO
   }
 }
 
-export { useSnapshot, proxy }
+export {
+  useSnapshot,
+  proxy,
+  subscribe,
+}
