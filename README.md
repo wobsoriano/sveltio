@@ -2,7 +2,7 @@
 
 [![npm (tag)](https://img.shields.io/npm/v/sveltio?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/sveltio) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sveltio?style=flat&colorA=000000&colorB=000000) ![NPM](https://img.shields.io/npm/l/sveltio?style=flat&colorA=000000&colorB=000000)
 
-Proxy-state with [valtio](https://github.com/pmndrs/valtio).
+State management solution for Svelte using proxies. Powered by [valtio](https://github.com/pmndrs/valtio).
 
 ## Installation
 
