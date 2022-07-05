@@ -33,26 +33,57 @@ Read from snapshots, mutate the source.
 </button>
 ```
 
-#### `proxyWithComputed`
+## Utilities
 
-You can have computed values with dependency tracking with property access.
+### `derive`
+
+You can subscribe to some proxies and create a derived proxy.
 
 ```ts
-import { proxyWithComputed } from 'sveltio/utils'
+import { derive } from 'sveltio/utils'
 
-export const state = proxyWithComputed(
+// create a base proxy
+const state = proxy({
+  count: 1,
+})
+
+// create a derived proxy
+const derived = derive({
+  doubled: get => get(state).count * 2,
+})
+
+// alternatively, attach derived properties to an existing proxy
+derive(
   {
-    count: 1,
+    tripled: get => get(state).count * 3,
   },
   {
-    doubled: snap => snap.count * 2,
+    proxy: state,
   },
 )
 ```
 
-#### `proxyWithHistory`
+### `proxyWithComputed`
 
-Function to create a proxy with snapshot history.
+You can define own computed properties within a proxy. By combining with a memoization library such as [proxy-memoize](https://github.com/dai-shi/proxy-memoize), optimizing function calls is possible.
+
+```ts
+import memoize from 'proxy-memoize'
+import { proxyWithComputed } from 'sveltio/utils'
+
+const state = proxyWithComputed(
+  {
+    count: 1,
+  },
+  {
+    doubled: memoize(snap => snap.count * 2),
+  },
+)
+```
+
+### `proxyWithHistory`
+
+This is a utility function to create a proxy with snapshot history.
 
 ```ts
 import { proxyWithHistory } from 'sveltio/utils'
@@ -66,3 +97,7 @@ console.log(state.value) // ---> { count: 0 }
 state.redo()
 console.log(state.value) // ---> { count: 1 }
 ```
+
+## License
+
+MIT
