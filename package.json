@@ -11,15 +11,24 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./utils": {
+      "require": "./dist/utils.js",
+      "import": "./dist/utils.mjs",
+      "types": "./dist/utils.d.ts"
+    }
   },
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
+  "sideEffects": false,
   "scripts": {
-    "build-fast": "tsup src/index.ts --format esm,cjs",
-    "build": "pnpm run build-fast -- --dts-resolve --minify",
+    "build": "tsup",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "release": "bumpp --commit --push --tag && npm publish",
