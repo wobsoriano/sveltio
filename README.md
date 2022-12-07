@@ -7,7 +7,7 @@ State management solution for Svelte using proxies. Powered by [valtio](https://
 ## Installation
 
 ```sh
-pnpm add sveltio
+pnpm add valtio sveltio
 ```
 
 ## Usage
