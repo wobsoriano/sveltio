@@ -43,12 +43,6 @@ export const state = proxy({ post: fetch(url).then(res => res.json()) })
 ```
 
 ```svelte
-<script lang="ts">
-  import { useSnapshot } from 'sveltio'
-  import { state  } from './store'
-  const snap = useSnapshot(state)
-</script>
-
 {#await $snap.post}
   <div>waiting...</div>
 {:then post}
