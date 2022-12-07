@@ -36,6 +36,9 @@ Read from snapshots, mutate the source.
 Async
 
 ```ts
+// store.ts
+import { proxy } from 'sveltio'
+
 export const state = proxy({ post: fetch(url).then(res => res.json()) })
 ```
 
