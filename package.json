@@ -1,6 +1,6 @@
 {
   "name": "sveltio",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Proxy-state for Svelte using Valtio.",
   "license": "MIT",
   "repository": {
