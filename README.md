@@ -52,9 +52,9 @@ export const state = proxy({ post: fetch(url).then(res => res.json()) })
 {#await $snap.post}
   <div>waiting...</div>
 {:then post}
-	<div>{snap.post.title}</div>
+  <div>{snap.post.title}</div>
 {:catch error}
-	<div>{error.message}</div>
+  <div>{error.message}</div>
 {/await}
 ```
 
