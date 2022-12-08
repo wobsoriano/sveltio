@@ -33,25 +33,6 @@ Read from snapshots, mutate the source.
 </button>
 ```
 
-Async
-
-```ts
-// store.ts
-import { proxy } from 'sveltio'
-
-export const state = proxy({ post: fetch(url).then(res => res.json()) })
-```
-
-```svelte
-{#await $snap.post}
-  <div>waiting...</div>
-{:then post}
-  <div>{post.title}</div>
-{:catch error}
-  <div>{error.message}</div>
-{/await}
-```
-
 ## Utilities
 
 ### `derive`
