@@ -108,6 +108,8 @@ const state = proxyWithComputed(
 )
 ```
 
+[When to use derive over proxyWithComputed?](https://github.com/wobsoriano/sveltio/issues/1)
+
 ### `proxyWithHistory`
 
 This is a utility function to create a proxy with snapshot history.
