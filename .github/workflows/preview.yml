@@ -7,7 +7,7 @@ on:
 
 jobs:
   approved:
-    if: github.event.comment.body === '!snapshot'
+    if: ${{ contains(github.event.comment.body, '!snapshot') }}
     runs-on: ubuntu-latest
 
     steps:
