@@ -8,7 +8,6 @@ jobs:
   build:
     if: ${{ contains(github.event.comment.body, '!snapshot') }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -21,7 +20,7 @@ jobs:
       - run: Setup Node.js
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.x
           cache: pnpm
 
       - name: Install dependencies
@@ -30,4 +29,5 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - run: pnpx pkg-pr-new publish --comment=create
+      - name: Create snapshot and comment to PR
+        run: pnpx pkg-pr-new publish --comment=create
