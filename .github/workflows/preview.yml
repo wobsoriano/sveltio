@@ -1,5 +1,7 @@
 name: Publish Approved Pull Requests
 on:
+  push:
+    branches: [master]
   issue_comment:
     types: [created]
   pull_request:
@@ -23,6 +25,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: pnpx pkg-pr-new@0.0 publish --compact --comment=create --pnpm --json
+      - run: pnpx pkg-pr-new publish --compact --comment=create --pnpm --json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
