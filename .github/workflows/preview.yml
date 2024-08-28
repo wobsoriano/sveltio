@@ -30,4 +30,4 @@ jobs:
         run: pnpm build
 
       - name: Create snapshot and comment to PR
-        run: pnpx pkg-pr-new publish --comment=update
+        run: pnpx pkg-pr-new publish --comment=create
