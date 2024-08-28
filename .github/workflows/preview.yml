@@ -23,4 +23,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: pnpx pkg-pr-new publish
+      - run: pnpx pkg-pr-new publish --comment=create --json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
