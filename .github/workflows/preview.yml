@@ -1,35 +1,26 @@
-name: Snapshot
-
+name: Publish Approved Pull Requests
 on:
   issue_comment:
-      types: [created]
+    types: [created]
   pull_request:
     branches: [master]
 
 jobs:
-  build:
-    if: ${{ contains(github.event.comment.body, '!snapshot') }}
+  approved:
+    if: github.event.review.state == 'APPROVED'
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - run: corepack enable
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
-
-      - name: Create snapshot and comment to PR
-        run: pnpm dlx pkg-pr-new@0.0 publish --compact --pnpm .
+      - run: pnpx pkg-pr-new publish
