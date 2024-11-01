@@ -3,7 +3,7 @@
   "version": "1.0.10",
   "description": "Proxy-state for Svelte using Valtio.",
   "license": "MIT",
-  "packageManager": "pnpm@9.8.0",
+  "packageManager": "pnpm@9.12.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wobsoriano/sveltio.git"
@@ -32,17 +32,17 @@
     "build": "tsup",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "release": "bumpp --commit --push --tag && npm publish",
+    "release": "pnpm run build && changeset publish",
     "prepublishOnly": "pnpm run build",
-    "update-deps": "taze -w && pnpm i",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "valtio": ">=1.6.0"
+    "valtio": "^2.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.9",
+    "@changesets/cli": "^2.27.9",
     "@sveltejs/vite-plugin-svelte": "^1.4.0",
     "@testing-library/svelte": "^3.2.2",
     "bumpp": "^7.2.0",
