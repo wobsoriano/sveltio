@@ -3,7 +3,7 @@
   "version": "1.0.10",
   "description": "Proxy-state for Svelte using Valtio.",
   "license": "MIT",
-  "packageManager": "pnpm@9.12.0",
+  "packageManager": "pnpm@9.12.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wobsoriano/sveltio.git"
@@ -42,37 +42,20 @@
     "svelte": "^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.18.9",
+    "@antfu/eslint-config": "^3.8.0",
     "@changesets/cli": "^2.27.9",
-    "@sveltejs/vite-plugin-svelte": "^1.4.0",
-    "@testing-library/svelte": "^3.2.2",
-    "bumpp": "^7.2.0",
-    "eslint": "^8.29.0",
-    "jsdom": "^19.0.0",
-    "lint-staged": "^12.5.0",
-    "node-fetch-native": "^1.0.1",
-    "simple-git-hooks": "^2.8.1",
-    "svelte": "^3.54.0",
-    "taze": "^0.8.4",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.3",
-    "valtio": "^1.7.6",
-    "vitest": "^0.25.5"
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@testing-library/svelte": "^5.2.4",
+    "bumpp": "^9.8.0",
+    "eslint": "^9.13.0",
+    "jsdom": "^25.0.1",
+    "lint-staged": "^15.2.10",
+    "node-fetch-native": "^1.6.4",
+    "svelte": "^5.1.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "valtio": "^2.1.1",
+    "vitest": "^2.1.4"
   },
-  "lint-staged": {
-    "{src,test}/**/*.{js,ts}": [
-      "eslint --fix"
-    ]
-  },
-  "homepage": "https://github.com/wobsoriano/sveltio#readme",
-  "eslintConfig": {
-    "extends": "@antfu"
-  },
-  "eslintIgnore": [
-    "dist",
-    "node_modules"
-  ],
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  }
+  "homepage": "https://github.com/wobsoriano/sveltio#readme"
 }
