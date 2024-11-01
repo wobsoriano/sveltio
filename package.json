@@ -1,6 +1,6 @@
 {
   "name": "sveltio",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "packageManager": "pnpm@9.12.3",
   "description": "Proxy-state for Svelte using Valtio.",
   "license": "MIT",
