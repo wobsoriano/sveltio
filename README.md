@@ -33,6 +33,8 @@ Read from snapshots, mutate the source.
 </button>
 ```
 
+For more info on how to use `valtio`, check out the official [docs](https://valtio.dev/docs/introduction/getting-started).
+
 ## License
 
 MIT
