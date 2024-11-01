@@ -1,33 +1,34 @@
 {
   "name": "sveltio",
   "version": "1.0.10",
+  "packageManager": "pnpm@9.12.3",
   "description": "Proxy-state for Svelte using Valtio.",
   "license": "MIT",
-  "packageManager": "pnpm@9.12.3",
+  "homepage": "https://github.com/wobsoriano/sveltio#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wobsoriano/sveltio.git"
   },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.mjs",
+      "require": "./dist/utils.js"
+    }
+  },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./utils": {
-      "require": "./dist/utils.js",
-      "import": "./dist/utils.mjs",
-      "types": "./dist/utils.d.ts"
-    }
-  },
   "files": [
-    "dist",
-    "*.d.ts"
+    "*.d.ts",
+    "dist"
   ],
-  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
@@ -38,24 +39,24 @@
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "valtio": "^2.0.0",
-    "svelte": "^4.0.0 || ^5.0.0"
+    "svelte": "^4.0.0 || ^5.0.0",
+    "valtio": "^2.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
     "@changesets/cli": "^2.27.9",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@testing-library/svelte": "^5.2.4",
     "bumpp": "^9.8.0",
     "eslint": "^9.13.0",
+    "eslint-plugin-format": "^0.1.2",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.10",
     "node-fetch-native": "^1.6.4",
-    "svelte": "^5.1.9",
+    "svelte": "^4.2.19",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
     "valtio": "^2.1.1",
     "vitest": "^2.1.4"
-  },
-  "homepage": "https://github.com/wobsoriano/sveltio#readme"
+  }
 }
