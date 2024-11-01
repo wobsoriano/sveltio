@@ -38,7 +38,8 @@
     "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
-    "valtio": "^2.0.0"
+    "valtio": "^2.0.0",
+    "svelte": "^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.9",
