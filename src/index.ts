@@ -11,16 +11,16 @@ function useSnapshot<T extends object>(
   const notifyInSync = options?.sync
   return {
     subscribe(fn: (payload: T) => void) {
-      fn(snapshot(proxyObject, promise => promise as Awaited<any>) as T)
+      fn(snapshot(proxyObject) as T)
       return subscribe(proxyObject, () => {
-        fn(snapshot(proxyObject, promise => promise as Awaited<any>) as T)
+        fn(snapshot(proxyObject) as T)
       }, notifyInSync)
     },
   }
 }
 
 export {
-  useSnapshot,
   proxy,
   subscribe,
+  useSnapshot,
 }

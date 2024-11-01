@@ -7,5 +7,7 @@ export default defineConfig({
   ],
   dts: true,
   clean: true,
+  bundle: true,
   format: ['cjs', 'esm'],
+  external: ['valtio/vanilla'],
 })
